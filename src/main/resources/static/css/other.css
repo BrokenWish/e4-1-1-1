@@ -1,0 +1,52 @@
+
+*{
+    padding: 0px;
+    margin:0px;
+}
+
+li{
+    list-style-type:none;
+    text-align: center;
+}
+
+
+button{
+    /* 清除默认边框 */
+    border:0;
+    outline:none;
+    /*清除默认背景 */
+    background-color: transparent;
+}
+
+input{
+    border: none;
+    box-shadow:none;
+    outline: none;
+}
+
+
+main .notFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-right: 200px;
+}
+
+main .notFound img{
+    width: 258px;
+    height: 210px;
+    border-radius: 0px 0px 0px 0px;
+    opacity: 1;
+}
+
+main .notFound .text{
+    width: 144px;
+    height: 22px;
+    font-size: 18px;
+    font-family: PingFang SC-中黑体, PingFang SC;
+    font-weight: normal;
+    color: #9E9E9E;
+    line-height: 22px;
+}
