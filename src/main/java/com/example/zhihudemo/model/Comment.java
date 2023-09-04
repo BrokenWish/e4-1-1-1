@@ -12,10 +12,10 @@ import java.util.List;
  */
 public class Comment {
     private int id;
-    private int userId;
-    private int refId;
+    private long userId;
+    private long refId;
     private String content;
-    private int parentId;
+    private long parentId;
     private List<Comment> children;
     private LocalDateTime gmtCreated;
     private LocalDateTime gmtModified;
@@ -28,19 +28,20 @@ public class Comment {
         this.id = id;
     }
 
-    public int getUserId() {
+
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
-    public int getRefId() {
+    public long getRefId() {
         return refId;
     }
 
-    public void setRefId(int refId) {
+    public void setRefId(long refId) {
         this.refId = refId;
     }
 
@@ -52,8 +53,13 @@ public class Comment {
         this.content = content;
     }
 
-    public int getParentId() {
+
+    public long getParentId() {
         return parentId;
+    }
+
+    public void setParentId(long parentId) {
+        this.parentId = parentId;
     }
 
     public List<Comment> getChildren() {
@@ -64,9 +70,6 @@ public class Comment {
         this.children = children;
     }
 
-    public void setParentId(int parentId) {
-        this.parentId = parentId;
-    }
 
     public LocalDateTime getGmtCreated() {
         return gmtCreated;

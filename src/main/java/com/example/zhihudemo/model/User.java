@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
  */
 public class User {
     private int id;
-    private int userId;
+    private long userId;
     private String phoneAndEmail;
     private String pwd;
     private LocalDateTime gmtCreated;
@@ -25,11 +25,11 @@ public class User {
         this.id = id;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

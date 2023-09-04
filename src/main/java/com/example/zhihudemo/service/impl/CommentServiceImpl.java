@@ -32,15 +32,15 @@ public class CommentServiceImpl implements CommentService {
 
 
             //创建prepareStatement对象
-            String sql = "insert into comment(user_id, red_id, content, parentId, gmt_created, gmt_modified) values (?,?,?,?,?)";
+            String sql = "insert into comment(user_id, red_id, content, parentId, gmt_created, gmt_modified) values (?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             //执行sql语句
-            ps.setInt(1, comment.getUserId());
-            ps.setInt(2, comment.getUserId());
-            ps.setInt(3, comment.getRefId());
-            ps.setInt(4, comment.getParentId());
+            ps.setLong(1, comment.getUserId());
+            ps.setLong(2, comment.getRefId());
+            ps.setString(3, comment.getContent());
+            ps.setLong(4, comment.getParentId());
             ps.setString(5, String.valueOf(comment.getGmtCreated()));
-            ps.setString(5, String.valueOf(comment.getGmtModified()));
+            ps.setString(6, String.valueOf(comment.getGmtModified()));
 
 
             System.out.println(ps.execute());
@@ -65,10 +65,10 @@ public class CommentServiceImpl implements CommentService {
                 Comment comment = new Comment();
 
                 comment.setId(rs.getInt("id"));
-                comment.setUserId(rs.getInt("user_id"));
-                comment.setRefId(rs.getInt("ref_id"));
+                comment.setUserId(rs.getLong("user_id"));
+                comment.setRefId(rs.getLong("ref_id"));
                 comment.setContent(rs.getString("content"));
-                comment.setParentId(rs.getInt("parent_id"));
+                comment.setParentId(rs.getLong("parent_id"));
 
                 String gmtCreated = rs.getString("gmt_created");
                 comment.setGmtCreated(LocalDateTime.parse(gmtCreated, formatter));

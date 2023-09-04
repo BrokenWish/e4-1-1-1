@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
             String sql = "insert into user(user_id, phoneAndEmail, pwd, gmt_created, gmt_modified) values (?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             //执行sql语句
-            ps.setInt(1, user.getUserId());
+            ps.setLong(1, user.getUserId());
             ps.setString(2,user.getPhoneAndEmail());
             ps.setString(3,user.getPwd());
             ps.setString(4, String.valueOf(user.getGmtCreated()));
@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
 
             while (rs.next()) {
                 user.setId(rs.getInt("id"));
-                user.setUserId(rs.getInt("user_id"));
+                user.setUserId(rs.getLong("user_id"));
                 user.setPhoneAndEmail(rs.getString("phoneAndEmail"));
                 user.setPwd(rs.getString("pwd"));
 

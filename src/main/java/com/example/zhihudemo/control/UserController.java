@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -25,7 +26,22 @@ public class UserController {
     private CommentService commentService;
 
     @GetMapping("/zhihu/index")
-    public String index(){
+    public String index(Model model) {
         return "index.html";
     }
+
+//    @PostMapping("/zhihu/userLogin")
+//    public String saveBook(User user) {
+//        if (user == null) {
+//            return "login.html";
+//        }
+//
+//        User user1 = userService.queryByPhone(user.getPhoneAndEmail());
+//
+//        if (user1 == null){
+//
+//        }
+//            return "saveBookSuccess";
+//    }
 }
+

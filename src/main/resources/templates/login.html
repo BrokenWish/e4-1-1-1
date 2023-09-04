@@ -160,10 +160,19 @@
     <button class="return"></button>
 
 </main>
-<form action="/zhihu/index" method="POST">
-
+<form action="/zhihu/userLogin" method="POST">
+    <div class="mask"></div>
+    <div class="model">
+    <div class="passwordLogin">密码登录</div>
+    <input class="logonName" type="text" placeholder="手机号或邮箱" name="phoneAndEmail">
+    <input class="loginPwd" type="password" placeholder="密码" name="pwd">
+    <button class="enter" type="submit">注册/登录</button>
+    <div class="intro">未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》</div>
+    <img class="close" src="../static/imgs/download.jpg">
+    </div>
 </form>
 
 <script src="../../static/js/index.js"></script>
+<script src="../../static/js/login.js"></script>
 </body>
 </html>
