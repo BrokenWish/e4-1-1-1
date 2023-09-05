@@ -8,17 +8,7 @@ document.querySelector(".return").addEventListener('click', function (){
 let loginElements = document.querySelectorAll('.loginBtn');
 for(let i = 0; i < loginElements.length; i++){
     loginElements[i].addEventListener("click", function (){
-        window.location.href = "../templates/login.html";
-
-        // form.innerHTML = '        <div class="mask"></div>\n' +
-        //     '        <div class="model">\n' +
-        //     '            <div class="passwordLogin">密码登录</div>\n' +
-        //     '            <input class="logonName" type="text" placeholder="手机号或邮箱">\n' +
-        //     '            <input class="loginPwd" type="password" placeholder="密码">\n' +
-        //     '            <button>注册/登录</button>\n' +
-        //     '            <div class="intro">未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》</div>\n' +
-        //     '            <img class="close" src="../static/imgs/download.jpg">\n' +
-        //     '        </div>';
+        window.location.href = "login.html";
     });
 }
 
