@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author Broken wish
@@ -23,6 +24,8 @@ import java.time.LocalDateTime;
  */
 @Controller
 public class UserApi {
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
     @Autowired
     private UserService userService;
 
@@ -32,24 +35,29 @@ public class UserApi {
         Result<User> result = new Result<>();
         User user = userService.queryByPhone(loginName);
 
-        if (user == null){
+        if (user.getPhoneAndEmail() == null){
+            System.out.println("6666666666666666666666666666666666666666666666666666");
             user.setUserId(SnowFlakeUtil.getSnowFlakeId());
             user.setPhoneAndEmail(loginName);
             user.setPwd(loginPwd);
-            user.setGmtCreated(LocalDateTime.now());
-            user.setGmtModified(LocalDateTime.now());
+            String date = formatter.format(LocalDateTime.now());
+
+            user.setGmtCreated(LocalDateTime.parse(date, formatter));
+            user.setGmtModified(LocalDateTime.parse(date, formatter));
 
             userService.add(user);
 
             result.setData(user);
             result.setSuccess(true);
+            result.setMessage("用户名不存在，已帮助注册");
             model.addAttribute("info", "注册成功！");
             return result;
         }
 
-        if (user.getPhoneAndEmail().equals(loginPwd)){
+        if (user.getPwd().equals(loginPwd)){
             result.setData(user);
             result.setSuccess(true);
+            result.setMessage("登陆成功");
             model.addAttribute("info", "登录成功！");
             return result;
         }else{

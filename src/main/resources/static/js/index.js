@@ -8,8 +8,8 @@ document.querySelector(".return").addEventListener('click', function (){
 let loginElements = document.querySelectorAll('.loginBtn');
 for(let i = 0; i < loginElements.length; i++){
     loginElements[i].addEventListener("click", function (){
+        window.location.href = "../templates/login.html";
 
-        // let form = document.querySelector("form");
         // form.innerHTML = '        <div class="mask"></div>\n' +
         //     '        <div class="model">\n' +
         //     '            <div class="passwordLogin">密码登录</div>\n' +
@@ -19,11 +19,6 @@ for(let i = 0; i < loginElements.length; i++){
         //     '            <div class="intro">未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》</div>\n' +
         //     '            <img class="close" src="../static/imgs/download.jpg">\n' +
         //     '        </div>';
-        // form.addEventListener("click", function(event) {
-        //     if (event.target.classList.contains("close")) {
-        //         form.innerHTML = '';
-        //     }
-        // });
     });
 }
 

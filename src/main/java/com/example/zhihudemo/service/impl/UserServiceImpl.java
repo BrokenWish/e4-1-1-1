@@ -31,12 +31,11 @@ public class UserServiceImpl implements UserService {
             String sql = "insert into user(user_id, phoneAndEmail, pwd, gmt_created, gmt_modified) values (?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             //执行sql语句
-            ps.setLong(1, user.getUserId());
+            ps.setInt(1, (int) user.getUserId());
             ps.setString(2,user.getPhoneAndEmail());
             ps.setString(3,user.getPwd());
-            ps.setString(4, String.valueOf(user.getGmtCreated()));
-            ps.setString(5, String.valueOf(user.getGmtModified()));
-
+            ps.setString(4, format);
+            ps.setString(5, format);
 
             System.out.println(ps.execute());
             ps.close();
@@ -52,6 +51,7 @@ public class UserServiceImpl implements UserService {
 
         try {
             PreparedStatement ps = MySQLUtils.getConn().prepareStatement("SELECT * FROM user WHERE phoneAndEmail = ?");
+            ps.setString(1, number);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -59,6 +59,7 @@ public class UserServiceImpl implements UserService {
                 user.setUserId(rs.getLong("user_id"));
                 user.setPhoneAndEmail(rs.getString("phoneAndEmail"));
                 user.setPwd(rs.getString("pwd"));
+
 
                 String gmtCreated = rs.getString("gmt_created");
                 user.setGmtCreated(LocalDateTime.parse(gmtCreated, formatter));

@@ -35,12 +35,12 @@ public class CommentServiceImpl implements CommentService {
             String sql = "insert into comment(user_id, red_id, content, parentId, gmt_created, gmt_modified) values (?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             //执行sql语句
-            ps.setLong(1, comment.getUserId());
-            ps.setLong(2, comment.getRefId());
+            ps.setInt(1, (int) comment.getUserId());
+            ps.setInt(2, (int) comment.getRefId());
             ps.setString(3, comment.getContent());
-            ps.setLong(4, comment.getParentId());
-            ps.setString(5, String.valueOf(comment.getGmtCreated()));
-            ps.setString(6, String.valueOf(comment.getGmtModified()));
+            ps.setInt(4, (int) comment.getParentId());
+            ps.setString(5, format);
+            ps.setString(6, format);
 
 
             System.out.println(ps.execute());

@@ -1,3 +1,10 @@
+let form = document.querySelector("form");
+form.addEventListener("click", function(event) {
+    if (event.target.classList.contains("close")) {
+        window.history.back(-1);
+    }
+});
+
 window.onload = function(){
     let loginName = document.querySelector(".logonName");
     let logonPwd = document.querySelector(".logonPwd");
