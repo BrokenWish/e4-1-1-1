@@ -30,6 +30,11 @@ public class UserController {
         return "index.html";
     }
 
+    @GetMapping("/zhihu/login")
+    public String login(Model model) {
+        return "login.html";
+    }
+
 //    @PostMapping("/zhihu/userLogin")
 //    public String saveBook(User user) {
 //        if (user == null) {

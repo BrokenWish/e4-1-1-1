@@ -8,7 +8,7 @@ document.querySelector(".return").addEventListener('click', function (){
 let loginElements = document.querySelectorAll('.loginBtn');
 for(let i = 0; i < loginElements.length; i++){
     loginElements[i].addEventListener("click", function (){
-        window.location.href = "login.html";
+        window.location.href = "/zhihu/login";
     });
 }
 
