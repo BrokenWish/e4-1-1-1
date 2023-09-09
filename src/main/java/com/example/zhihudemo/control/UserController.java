@@ -25,15 +25,22 @@ public class UserController {
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("/zhihu/index")
+    @GetMapping("/zhihu/index.html")
     public String index(Model model) {
         return "index.html";
     }
 
-    @GetMapping("/zhihu/login")
+    @GetMapping("/zhihu/other.html")
+    public String other(Model model) {
+        return "other.html";
+    }
+
+    @GetMapping("/zhihu/login.html")
     public String login(Model model) {
         return "login.html";
     }
+
+
 
 //    @PostMapping("/zhihu/userLogin")
 //    public String saveBook(User user) {

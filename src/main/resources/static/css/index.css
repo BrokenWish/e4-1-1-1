@@ -387,10 +387,11 @@ aside ul li{
     background: url("../imgs/old.png") no-repeat center / 108px 51px;;
 }
 
+
 main section{
+    width: 65%;
     margin-top: 10px;
     margin-left: 120px;
-    margin-right: 538px;
     background: #FFFFFF;
     border-radius: 2px 2px 2px 2px;
     opacity: 1;
@@ -405,7 +406,6 @@ main section{
 }
 
 main section .content{
-    cursor: pointer;
 
     padding-top: 16px;
     padding-left: 15px;
@@ -437,8 +437,7 @@ main section .head{
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 
-    padding-left: 15px;
-    padding-top: 20px;
+    padding: 20px 20px 0px 20px;
     height: 22px;
     font-size: 16px;
     font-family: PingFang SC-中粗体, PingFang SC;

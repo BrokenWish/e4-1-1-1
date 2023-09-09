@@ -8,7 +8,7 @@ document.querySelector(".return").addEventListener('click', function (){
 let loginElements = document.querySelectorAll('.loginBtn');
 for(let i = 0; i < loginElements.length; i++){
     loginElements[i].addEventListener("click", function (){
-        window.location.href = "redirect:/zhihu/login";
+        window.location.href = "/zhihu/login.html";
     });
 }
 
@@ -45,10 +45,10 @@ for(let i = 0; i < loginElements.length; i++){
 
             blueLines[i].classList.add("blueLine");
             if (i != 0){
-                window.location.href = "other.html";
+                window.location.href = "/zhihu/other.html";
                 blueLines[i].classList.add("blueLine");
             }else{
-                window.location.href = "index.html";
+                window.location.href = "/zhihu/index.html";
                 blueLines[i].classList.add("blueLine");
             }
         });
@@ -57,7 +57,7 @@ for(let i = 0; i < loginElements.length; i++){
     let reads = document.querySelectorAll(".read");
     for (let i = 0; i < reads.length; i++) {
         reads[i].addEventListener("click", function () {
-            let hide = document.querySelector(".hide");
-            hide.style.cssText = "";
+            let contents = document.querySelectorAll('.content');
+            contents[i].classList.toggle("hide");
         });
     }
