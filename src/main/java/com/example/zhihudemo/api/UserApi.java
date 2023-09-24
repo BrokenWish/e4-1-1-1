@@ -2,9 +2,11 @@ package com.example.zhihudemo.api;
 
 import com.example.zhihudemo.model.Result;
 import com.example.zhihudemo.model.User;
+import com.example.zhihudemo.service.CommentService;
 import com.example.zhihudemo.service.UserService;
 import com.example.zhihudemo.util.SnowFlakeUtil;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,15 +30,17 @@ public class UserApi {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private CommentService commentService;
 
     @PostMapping("/api/user/login")
     @ResponseBody
-    public Result<User> login(@RequestParam("loginName")String loginName, @RequestParam("loginPwd")String loginPwd, Model model, HttpServletRequest request){
+    public Result<User> login(@RequestParam("loginName")String loginName, @RequestParam("loginPwd")String loginPwd, @RequestParam(name = "model" ,required = false)Model model, @RequestParam(name = "request" ,required = false) HttpServletRequest request){
         Result<User> result = new Result<>();
         User user = userService.queryByPhone(loginName);
+        HttpSession session = request.getSession();
 
         if (user.getPhoneAndEmail() == null){
-            System.out.println("6666666666666666666666666666666666666666666666666666");
             user.setUserId(SnowFlakeUtil.getSnowFlakeId());
             user.setPhoneAndEmail(loginName);
             user.setPwd(loginPwd);
@@ -50,7 +54,7 @@ public class UserApi {
             result.setData(user);
             result.setSuccess(true);
             result.setMessage("用户名不存在，已帮助注册");
-            model.addAttribute("info", "注册成功！");
+            session.setAttribute("info", "注册成功！");
             return result;
         }
 
@@ -58,11 +62,11 @@ public class UserApi {
             result.setData(user);
             result.setSuccess(true);
             result.setMessage("登陆成功");
-            model.addAttribute("info", "登录成功！");
+            session.setAttribute("true", user.getPhoneAndEmail());
             return result;
         }else{
             result.setMessage("密码错误");
-            model.addAttribute("info", "登录失败！");
+            session.setAttribute("false", "登录失败！");
             return result;
         }
     }

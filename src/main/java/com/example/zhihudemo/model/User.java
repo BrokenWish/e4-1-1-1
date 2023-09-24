@@ -1,5 +1,8 @@
 package com.example.zhihudemo.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -9,12 +12,14 @@ import java.time.LocalDateTime;
  * @Name com.example.zhihudemo.model
  * @Projrct zhihudemo
  */
-public class User {
+public class User implements Serializable {
     private int id;
     private long userId;
     private String phoneAndEmail;
     private String pwd;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtCreated;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime gmtModified;
 
     public int getId() {

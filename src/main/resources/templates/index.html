@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -101,7 +101,7 @@
         <div class="bottom">
             <button class="like loginBtn">赞同<span class="has_like">1</span></button>
             <button class="dislike loginBtn"></button>
-            <button class="comment">添加评论</button>
+            <button class="comment loginBtn">添加评论</button>
             <div class="releaseDate">04-01</div>
         </div>
     </section>
@@ -115,7 +115,7 @@
         <div class="bottom">
             <button class="like loginBtn">赞同<span class="has_like">1</span></button>
             <button class="dislike loginBtn"></button>
-            <button class="comment">添加评论</button>
+            <button class="comment loginBtn">添加评论</button>
             <div class="releaseDate">03-11</div>
         </div>
     </section>
@@ -128,7 +128,7 @@
         <div class="bottom">
             <button class="like loginBtn">赞同<span class="has_like">1</span></button>
             <button class="dislike loginBtn"></button>
-            <button class="comment">添加评论</button>
+            <button class="comment loginBtn">添加评论</button>
             <div class="releaseDate">04-01</div>
         </div>
     </section>
@@ -141,7 +141,7 @@
         <div class="bottom">
             <button class="like loginBtn">赞同<span class="has_like">1</span></button>
             <button class="dislike loginBtn"></button>
-            <button class="comment">添加评论</button>
+            <button class="comment loginBtn">添加评论</button>
             <div class="releaseDate">04-01</div>
         </div>
     </section>
@@ -155,7 +155,7 @@
         <div class="bottom">
             <button class="like loginBtn">赞同<span class="has_like">1</span></button>
             <button class="dislike loginBtn"></button>
-            <button class="comment">添加评论</button>
+            <button class="comment loginBtn">添加评论</button>
             <div class="releaseDate">03-11</div>
         </div>
     </section>
@@ -163,6 +163,10 @@
     <button class="return"></button>
 
 </main>
+
+<form action="/zhihu/login.html" method="POST">
+
+</form>
 
 <script src="../js/index.js"></script>
 </body>

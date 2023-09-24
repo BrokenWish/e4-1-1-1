@@ -1,0 +1,172 @@
+.comments{
+    position: relative;
+    margin: 5% auto 0 auto;
+    width: 708px;
+    height: 70%;
+    background: #FFFFFF;
+}
+
+.commentList .close{
+    cursor: pointer;
+    position: absolute;
+    top:0px;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+}
+
+.comments .commentTop{
+    height: 54px;
+    position: relative;
+}
+
+.comments .commentTop::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: #F1F1F1;
+}
+
+.comments .commentTop div:first-child{
+    float: left;
+    padding:16px 20px;
+    font-size: 16px;
+    font-family: PingFang SC-中黑体, PingFang SC;
+}
+
+.comments .commentTop div:last-child{
+    position: relative;
+    float: right;
+    padding:16px 14px;
+    font-size: 14px;
+    font-family: PingFang SC-中黑体, PingFang SC;
+    color: #888FA2;
+}
+
+.comments .commentTop div:last-child::before{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 15px;
+    top: 19px;
+    left: -6px;
+    background: url("../imgs/switch.png") no-repeat center / 20px 25px;
+}
+
+.comment-section {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.comment-form {
+    margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #1987FB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.comment-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.userComment {
+    margin-left: 48px;
+    margin-bottom: 20px;
+}
+
+.userComment .username {
+    position: relative;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: PingFang SC-中黑体, PingFang SC;
+    margin-bottom: 10px;
+}
+
+.userComment .username::before{
+    content: "";
+    position: absolute;
+    left: -32px;
+    width: 20px;
+    height: 20px;
+    background: url("../imgs/avatar.png") no-repeat center / 20px 20px;
+}
+
+.userComment .comment-content {
+    font-size: 14px;
+    font-family: PingFang SC-常规体, PingFang SC;
+    line-height: 1.5;
+}
+
+.userComment img {
+    width: 14px;
+    height: 17px;
+}
+
+.commentSub{
+    margin: 0 auto;
+    height: 64px;
+    width: 707px;
+    background: #FAFAFA;
+    border: 1px solid #E5E5E5;
+}
+
+.commentSub input{
+    position: relative;
+    box-sizing: border-box;
+    margin: 14px 0px 14px 34px;
+    width: 578px;
+    height: 36px;
+    border-radius: 2px 2px 2px 2px;
+    border: 1px solid #D3D3D3;
+    padding: 7px 50px 7px 7px;
+    font-size: 16px;
+    font-family: PingFang SC-常规体, PingFang SC;
+    color: #9E9E9E;
+    line-height: 22px;
+}
+
+.commentSub input:focus{
+    color: #000000;
+}
+
+
+.commentSub img{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    margin-left: -40px;
+    margin-top: 25px;
+}
+
+.commentSub button{
+    cursor: pointer;
+    margin-top: 14px;
+    margin-left: 16px;
+    width: 60px;
+    height: 36px;
+    background: #0084FF;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 14px;
+    font-family: PingFang SC-中黑体, PingFang SC;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 30px;
+}

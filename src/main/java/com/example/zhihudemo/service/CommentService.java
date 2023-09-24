@@ -24,7 +24,7 @@ public interface CommentService {
 
     int add(Comment comment);
 
-    List<Comment> findByRedId(int refId);
+    List<Comment> findByRedId(long refId);
 
-    List<Comment> query(int refId);
+    List<Comment> query(long refId);
 }

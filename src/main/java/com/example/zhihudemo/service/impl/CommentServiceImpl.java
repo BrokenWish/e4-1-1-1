@@ -52,12 +52,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> findByRedId(int refId) {
+    public List<Comment> findByRedId(long refId) {
         List<Comment> comments = new ArrayList<>();
 
         try {
             PreparedStatement ps = MySQLUtils.getConn().prepareStatement("SELECT * FROM comment WHERE ref_id = ?");
-            ps.setInt(1, refId);
+            ps.setLong(1, refId);
             ResultSet rs = ps.executeQuery();
 
 
@@ -87,7 +87,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> query(int refId) {
+    public List<Comment> query(long refId) {
         //查询所有的评论记录包含回复的
         List<Comment> comments = findByRedId(refId);
 

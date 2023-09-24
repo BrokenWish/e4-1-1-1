@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>知乎-有问题，就有答案</title>
     <link rel="stylesheet"  href="../css/index.css" />
+    <link rel="stylesheet"  href="../css/login.css" />
 
 </head>
 <body>
@@ -163,19 +164,10 @@
     <button class="return"></button>
 
 </main>
-<form action="/zhihu/index.html" method="POST">
-    <div class="mask"></div>
-    <div class="model">
-    <div class="passwordLogin">密码登录</div>
-    <input class="logonName" type="text" placeholder="手机号或邮箱" name="phoneAndEmail">
-    <input class="loginPwd" type="password" placeholder="密码" name="pwd">
-    <button class="enter" type="submit">注册/登录</button>
-    <div class="intro">未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》</div>
-    <img class="close" src="../imgs/download.jpg">
-    </div>
-</form>
 
-<script src="../js/index.js"></script>
+<div class="commentList">
+</div>
+
 <script src="../js/login.js"></script>
 </body>
 </html>
